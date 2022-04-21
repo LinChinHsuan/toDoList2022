@@ -1,0 +1,17 @@
+@import "reset";
+@import "mixin";
+
+html,body{
+    height: 100%;
+}
+body{
+    font-family: 'Noto Sans TC', sans-serif;
+}
+.container-fluid{
+    background-image: url("https://images.pexels.com/photos/5185159/pexels-photo-5185159.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260");
+    background-size: cover;
+    background-position: center;
+}
+.close{
+    font-size: 1rem;
+}

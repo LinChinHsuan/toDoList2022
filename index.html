@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDoList</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+        integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <link rel="stylesheet" href="all.css">
+</head>
+
+<body>
+    <div class="container-fluid h-100 d-flex align-items-center">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="d-none d-md-block col-md-3 col-lg-3 bg-white p-4 p-lg-5">
+                    <img class="img-fluid" src="sticky-note.png" alt="logo">
+                </div>
+                <div class="col-md-7 col-lg-5 bg-white py-4 pr-4 pl-0">
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control rounded-0 border-primary" placeholder="請輸入代辦事項" id="toDo">
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-primary rounded-0" type="button"
+                                id="button-addon2">新增</button>
+                        </div>
+                    </div>
+                    <ul class="list-group rounded-0" id="list">
+                        <li class="list-group-item">An item
+                            <button type="button" class="close" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
+        crossorigin="anonymous"></script>
+    <script src="all.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+//RWD斷點
+@mixin pad {
+    @media(max-width:768px){
+        @content
+    }
+};
+@mixin mobile767 {
+    @media(max-width:767px){
+        @content
+    }
+};
+@mixin mobile569 {
+    @media(max-width:569px){
+        @content
+    }
+};
+
+//圖片取代文字
+@mixin textHide {
+    text-indent: 101%;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+//flex-item每個寬度相等
+@mixin flexItemEquallyWidth{
+    width: 0;
+    flex-grow: 1;
+}
+
+//text-truncate讓多出來的文字變成...
+@mixin textTruncateFromBS4{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+//半圓形border
+@mixin halfCircle($size,$color){
+    border-top: $size solid $color;
+    border-left: $size solid $color;
+    border-right: $size solid transparent;
+    border-bottom: $size solid transparent;
+    transform: rotate(45deg);
+}
