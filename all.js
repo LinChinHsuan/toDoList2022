@@ -1,40 +1,32 @@
-let data = JSON.parse(localStorage.getItem("toDoList")) || [];
-
-function renderData(){
-    let list = document.getElementById("list");
-    let str = "";
-    data.forEach(function(item,index){
-        str += `
-        <li class="list-group-item">${item.content}
-            <button type="button" class="close" aria-label="Close">
-                <span aria-hidden="true" data-num="${index}">&times;</span>
-            </button>
-        </li>
-        `;
+var data = JSON.parse(localStorage.getItem("toDoList")) || [];
+function renderData() {
+    var list = document.getElementById("list");
+    var str = "";
+    data.forEach(function (item, index) {
+        str += "\n        <li class=\"list-group-item\">".concat(item.content, "\n            <button type=\"button\" class=\"close\" aria-label=\"Close\">\n                <span aria-hidden=\"true\" data-num=\"").concat(index, "\">&times;</span>\n            </button>\n        </li>\n        ");
     });
     list.innerHTML = str;
-    document.getElementById("toDo").value = "";
-    localStorage.setItem("toDoList",JSON.stringify(data));
+    document.getElementById('toDo').value = '';
+    localStorage.setItem("toDoList", JSON.stringify(data));
 }
 renderData();
-
 //新增
-document.getElementById("button-addon2").addEventListener("click",function(){
-    let newToDo = document.getElementById("toDo").value;
-    if(newToDo === ""){
-        return
+document.getElementById("button-addon2").addEventListener("click", function () {
+    var newToDo = document.getElementById('toDo').value;
+    if (newToDo === '') {
+        return;
     }
-    let item = {
+    var item = {
         content: newToDo
-    }
+    };
     data.unshift(item);
     renderData();
-},false);
-
+}, false);
 //刪除
-document.getElementById("list").addEventListener("click",function(e){
-    if(e.target.nodeName === "SPAN"){
-        data.splice(e.target.dataset.num,1);
+document.getElementById("list").addEventListener("click", function (e) {
+    if (e.target.nodeName === "SPAN") {
+        var targetIndex = parseInt(e.target.dataset.num);
+        data.splice(targetIndex, 1);
         renderData();
-    } 
-},false);
+    }
+}, false);
